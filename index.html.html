@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Demand Forecasting</title>
+</head>
+<body>
+    <h1>Inventory Demand Forecasting</h1>
+    <form action="/predict" method="post">
+        <label for="weeks">Number of Weeks:</label><br>
+        <input type="text" id="weeks" name="weeks"><br>
+        <label for="center_id">Center ID:</label><br>
+        <input type="text" id="center_id" name="center_id"><br>
+        <label for="meal_id">Meal ID:</label><br>
+        <input type="text" id="meal_id" name="meal_id"><br>
+        <label for="checkout_price">Checkout Price:</label><br>
+        <input type="text" id="checkout_price" name="checkout_price"><br>
+        <label for="base_price">Base Price:</label><br>
+        <input type="text" id="base_price" name="base_price"><br>
+        <label for="emailer_for_promotion">Emailer for Promotion:</label><br>
+        <input type="text" id="emailer_for_promotion" name="emailer_for_promotion"><br>
+        <label for="homepage_featured">Homepage Featured:</label><br>
+        <input type="text" id="homepage_featured" name="homepage_featured"><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
