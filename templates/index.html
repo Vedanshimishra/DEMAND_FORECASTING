@@ -3,33 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demand Prediction</title>
+    <title>Meal Demand Forecast</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #87CEEB;
+            color: white;
+            font-size: 1.5em;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .content-section {
+            display: flex;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .content-section img {
+            flex: 1;
+            max-width: 300px;
+            height: auto;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+        .content-text {
+            flex: 2;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #87CEEB;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .form-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container input,
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Predict Demand</h1>
-    <form action="/predict" method="POST">
-        <label for="id">ID:</label>
-        <input type="text" name="id" required><br><br>
-        <label for="week">Week:</label>
-        <input type="text" name="week" required><br><br>
-        <label for="center_id">Center ID:</label>
-        <input type="text" name="center_id" required><br><br>
-        <label for="meal_id">Meal ID:</label>
-        <input type="text" name="meal_id" required><br><br>
-        <label for="checkout_price">Checkout Price:</label>
-        <input type="text" name="checkout_price" required><br><br>
-        <label for="base_price">Base Price:</label>
-        <input type="text" name="base_price" required><br><br>
-        <label for="emailer_for_promotion">Emailer for Promotion:</label>
-        <input type="text" name="emailer_for_promotion" required><br><br>
-        <label for="homepage_featured">Homepage Featured:</label>
-        <input type="text" name="homepage_featured" required><br><br>
-
-        <button type="submit">Submit</button>
-    </form>
-
-    {% if prediction %}
-        <h3>Predicted Demand: {{ prediction }}</h3>
-    {% endif %}
+    <header>
+        Welcome to the Meal Forecast Store
+    </header>
+    
+    <div class="content-container">
+        <!-- Section 1 -->
+        <div class="content-section">
+            <img src="necessity.jpg" alt="Necessity of Prediction">
+            <div class="content-text">
+                <h2>Necessity of Meal Demand Prediction</h2>
+                <p>Meal demand prediction is a crucial tool for businesses in the food and beverage industry, 
+                    including restaurants, cafeterias, and meal delivery services. By accurately forecasting 
+                    the number of meals needed, companies can manage their resources effectively, reduce waste, and ensure customer satisfaction. It helps businesses stay ahead of fluctuating demands caused by factors like seasons, events, or market trends.</p>
+            </div>
+        </div>
+        
+        <!-- Section 2 -->
+        <div class="content-section">
+            <img src="problem.jpg" alt="Problems Solved">
+            <div class="content-text">
+                <h2>What Problem Does It Solve?</h2>
+                <p>- Overproduction and Waste: Without demand forecasting, businesses often produce excess food, leading to wastage and financial loss.</p>
+                <p>- Underproduction and Shortages: Inaccurate predictions can result in meal shortages, leaving customers dissatisfied and potentially harming the company’s reputation.</p>
+            <p>-Inefficient Resource Allocation: Businesses may mismanage ingredients, staff, and kitchen operations, increasing costs unnecessarily.</p>
+                <p>Seasonal and Event Fluctuations: Predicting demand for special occasions or during seasonal peaks ensures preparedness and efficiency.</p> </div>
+        </div>
+        
+        <!-- Section 3 -->
+        <div class="content-section">
+            <img src="applications.jpg" alt="Applications">
+            <div class="content-text">
+                <h2>Applications</h2>
+                <p>- Restaurant Management: Ensures sufficient stock of ingredients to meet daily customer demands.</p>
+                <p>- Catering Services: Helps plan meal quantities for events or corporate orders.
+                </p>
+                <p>- Grocery Chains: Predicts demand for ready-to-eat meals, aiding inventory control.
+                </p>
+                <p>- Meal Subscription Services: Forecasts customer orders to optimize inventory and delivery schedules.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Section 4 -->
+        <div class="content-section">
+            <img src="benefits.jpg" alt="Benefits">
+            <div class="content-text">
+                <h2>Benefits</h2>
+                <p>- Cost Savings: Reduces unnecessary expenditures on excess inventory or last-minute procurements.
+                    Customer Satisfaction: Ensures consistent availability of meals, enhancing customer loyalty.
+                    Sustainability: Minimizes food waste, promoting environmental responsibility.
+                    Data-Driven Decision Making: Leverages historical and real-time data for accurate forecasts and better operational planning.</p>
+               
+            </div>
+        </div>
+        
+        <!-- Section 5 -->
+        <div class="content-section">
+            <img src="future.jpg" alt="Future Outlook">
+            <div class="content-text">
+                <h2>Future Outlook</h2>
+                <p>As artificial intelligence and machine learning continue to evolve, meal demand prediction models will become more accurate and adaptive. These advancements will enable businesses to personalize meal offerings, predict demand patterns with greater precision, and create sustainable operations in the long term.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        © 2024 Meal Forecast Store | Designed with ❤️
+    </footer>
+    
+    <div class="content">
+        <div class="form-container">
+            <h2>Predict Demand</h2>
+            <form action="/predict" method="POST">
+                <label for="id">ID:</label>
+                <input type="text" name="id" placeholder="Enter ID" required>
+                <label for="week">Week:</label>
+                <input type="text" name="week" placeholder="Enter week" required>
+                <label for="center_id">Center ID:</label>
+                <input type="text" name="center_id" placeholder="Enter center ID" required>
+                <label for="meal_id">Meal ID:</label>
+                <input type="text" name="meal_id" placeholder="Enter meal ID" required>
+                <label for="checkout_price">Checkout Price:</label>
+                <input type="text" name="checkout_price" placeholder="Enter checkout price" required>
+                <label for="base_price">Base Price:</label>
+                <input type="text" name="base_price" placeholder="Enter base price" required>
+                <label for="emailer_for_promotion">Emailer for Promotion:</label>
+                <input type="text" name="emailer_for_promotion" placeholder="Enter 0 or 1" required>
+                <label for="homepage_featured">Homepage Featured:</label>
+                <input type="text" name="homepage_featured" placeholder="Enter 0 or 1" required>
+                <button type="submit">Submit</button>
+            </form>
+            {% if prediction is not none %}
+            <div class="prediction">
+                Predicted Weekly Orders: {{ prediction }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>
